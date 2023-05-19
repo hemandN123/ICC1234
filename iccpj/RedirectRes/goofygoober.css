@@ -1,0 +1,37 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header styles */
+h1, h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #0071bc;
+}
+
+/* List styles */
+ul {
+    margin-left: 30px;
+    list-style-type: disc;
+}
+
+/* Paragraph styles */
+p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Link styles */
+a {
+    color: #0071bc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}

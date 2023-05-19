@@ -1,0 +1,64 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #0072c6;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Section styles */
+section {
+  padding: 20px;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+/* Unordered list styles */
+ul {
+  list-style-type: disc;
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+/* Anchor tag styles */
+a {
+  color: #0072c6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Card styles */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
+}
+
+.card img {
+  max-width: 100%;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin-top: 0;
+}

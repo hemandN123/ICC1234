@@ -1,0 +1,72 @@
+<h2>Calculate Your Carbon Footprint</h2>
+<link rel="stylesheet" href="cycp.css">
+<form>
+  <label for="numPeople">Number of people in household:</label>
+  <input type="number" id="numPeople" name="numPeople" min="1" required><br>
+  <label for="electricity">Electricity use in kilowatt-hours (kWh) per year:</label>
+  <input type="number" id="electricity" name="electricity" min="0" step="0.01" required><br>
+  <label for="naturalGas">Natural gas use in therms per year:</label>
+  <input type="number" id="naturalGas" name="naturalGas" min="0" step="0.01" required><br>
+  <label for="fuelOil">Fuel oil use in gallons per year:</label>
+  <input type="number" id="fuelOil" name="fuelOil" min="0" step="0.01" required><br>
+  <label for="propane">Propane use in gallons per year:</label>
+  <input type="number" id="propane" name="propane" min="0" step="0.01" required><br>
+  <label for="carMileage">Annual mileage of personal vehicle:</label>
+  <input type="number" id="carMileage" name="carMileage" min="0" step="0.01" required><br>
+  <label for="carFuelEfficiency">Fuel efficiency of personal vehicle in miles per gallon:</label>
+  <input type="number" id="carFuelEfficiency" name="carFuelEfficiency" min="0" step="0.01" required><br>
+  <label for="airTravel">Air travel in miles per year:</label>
+  <input type="number" id="airTravel" name="airTravel" min="0" step="0.01" required><br>
+  <input type="button" value="Calculate" onclick="calculateCarbonFootprint()">
+</form>
+<div id="result"></div>
+</main>
+<footer>
+<p>© Climate Change Awareness 2023</p>
+</footer>
+<script>
+function calculateCarbonFootprint() {
+  var numPeople = document.getElementById("numPeople").value;
+  var electricity = document.getElementById("electricity").value;
+  var naturalGas = document.getElementById("naturalGas").value;
+  var fuelOil = document.getElementById("fuelOil").value;
+  var propane = document.getElementById("propane").value;
+  var carMileage = document.getElementById("carMileage").value;
+  var carFuelEfficiency = document.getElementById("carFuelEfficiency").value;
+  var airTravel = document.getElementById("airTravel").value;
+  
+  var totalCarbonFootprint = 0;
+  
+  // calculate carbon footprint
+      // calculate carbon footprint for natural gas
+var naturalGasEmissionsFactor = 0.005303; // metric tons of CO2 per therm
+var naturalGasCarbonFootprint = naturalGas * naturalGasEmissionsFactor;
+totalCarbonFootprint += naturalGasCarbonFootprint;
+
+// calculate carbon footprint for fuel oil
+var fuelOilEmissionsFactor = 0.003114; // metric tons of CO2 per gallon
+var fuelOilCarbonFootprint = fuelOil * fuelOilEmissionsFactor;
+totalCarbonFootprint += fuelOilCarbonFootprint;
+
+// calculate carbon footprint for propane
+var propaneEmissionsFactor = 0.005824; // metric tons of CO2 per gallon
+var propaneCarbonFootprint = propane * propaneEmissionsFactor;
+totalCarbonFootprint += propaneCarbonFootprint;
+
+// calculate carbon footprint for personal vehicle
+var carEmissionsFactor = 0.008887; // metric tons of CO2 per mile
+var carCarbonFootprint = carMileage / carFuelEfficiency * carEmissionsFactor;
+totalCarbonFootprint += carCarbonFootprint;
+
+// calculate carbon footprint for air travel
+var airEmissionsFactor = 0.000163; // metric tons of CO2 per mile
+var airCarbonFootprint = airTravel * airEmissionsFactor;
+totalCarbonFootprint += airCarbonFootprint;
+
+// display results
+var resultDiv = document.getElementById("result");
+resultDiv.innerHTML = "The total carbon footprint for " + numPeople + " people is " + totalCarbonFootprint.toFixed(2) + " metric tons of CO2 per year.(2.82 accuracy diff)";
+}
+</script>
+</body>
+</html>
